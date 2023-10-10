@@ -259,6 +259,70 @@ class _CreateResearchPageState extends State<CreateResearchPage>
               ),
               const SizedBox(height: 30),
               _buildStep(currentStep),
+              Column(children: [
+                Column(
+                  children: [
+                    SizedBox(height: 10),
+                    Card(
+                      color: Colors.white,
+                      shadowColor: Colors.transparent,
+                      // elevation: 5,
+                      // shape: RoundedRectangleBorder(
+                      //   borderRadius: BorderRadius.circular(50),
+                      // ),
+                      margin: EdgeInsets.only(top: 0, bottom: 0),
+                      child: ListTile(
+                        leading: CircleAvatar(
+                            backgroundColor: Color(0xFF029456),
+                            child: Icon(
+                              Icons.check_circle,
+                              color: Colors.white,
+                            )),
+                        title: Text("12.30 PM",
+                            style: TextStyle(
+                                fontFamily: 'Plus Jakarta Sans',
+                                fontSize: 13,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black)),
+                        subtitle: Text("Sat, 4 Oct 2023",
+                            style: TextStyle(
+                                fontFamily: 'Plus Jakarta Sans',
+                                fontSize: 12.5,
+                                color: Colors.grey[700])),
+                        trailing: Icon(Icons.watch_later),
+                      ),
+                    ),
+                    Card(
+                      color: Colors.white,
+                      shadowColor: Colors.transparent,
+                      // elevation: 5,
+                      // shape: RoundedRectangleBorder(
+                      //   borderRadius: BorderRadius.circular(50),
+                      // ),
+                      child: ListTile(
+                        leading: CircleAvatar(
+                            backgroundColor: Color(0xFF029456),
+                            child: Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            )),
+                        title: Text("10.00 PM",
+                            style: TextStyle(
+                                fontFamily: 'Plus Jakarta Sans',
+                                fontSize: 13,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black)),
+                        subtitle: Text("Mon, 16 Oct 2023",
+                            style: TextStyle(
+                                fontFamily: 'Plus Jakarta Sans',
+                                fontSize: 12.5,
+                                color: Colors.grey[700])),
+                        trailing: Icon(Icons.watch_later),
+                      ),
+                    ),
+                  ],
+                ),
+              ]),
               FadeAnimation(
                 1.5,
                 Container(
@@ -268,35 +332,38 @@ class _CreateResearchPageState extends State<CreateResearchPage>
                     height: 60,
                     onPressed: () {
                       // Handle the "Next" button click to move to the next step
-                      currentStep == 0
-                          ? alertConfirmationDialogCupertino(
-                              context,
-                              'Open Room',
-                              'Are you sure with the detail research room that you want to open?')
-                          : null;
+                      setState(() {
+                        currentStep++;
+                      });
+                      // currentStep == 0
+                      //     ? alertConfirmationDialogCupertino(
+                      //         context,
+                      //         'Open Room',
+                      //         'Are you sure with the detail research room that you want to open?')
+                      //     : null;
 
-                      currentStep == 1
-                          ? alertConfirmationDialogCupertino(
-                              context,
-                              'Choose Components',
-                              'Are you sure with the research components you choose?')
-                          : null;
+                      // currentStep == 1
+                      //     ? alertConfirmationDialogCupertino(
+                      //         context,
+                      //         'Choose Components',
+                      //         'Are you sure with the research components you choose?')
+                      //     : null;
 
-                      currentStep == 2
-                          ? alertConfirmationDialogCupertino(
-                              context,
-                              'Pick Dates & Times',
-                              'Are you sure you choose the right dates and times?')
-                          : null;
+                      // currentStep == 2
+                      //     ? alertConfirmationDialogCupertino(
+                      //         context,
+                      //         'Pick Dates & Times',
+                      //         'Are you sure you choose the right dates and times?')
+                      //     : null;
 
-                      currentStep == 3
-                          ? alertConfirmationDialogCupertino(
-                              context,
-                              'Upload Guidebook',
-                              'Is the guidebook file you choose is correct one with pdf format?')
-                          : null;
+                      // currentStep == 3
+                      //     ? alertConfirmationDialogCupertino(
+                      //         context,
+                      //         'Upload Guidebook',
+                      //         'Is the guidebook file you choose is correct one with pdf format?')
+                      //     : null;
 
-                      currentStep == 4 ? generateCodeAndWriteNFCTag() : null;
+                      // currentStep == 4 ? generateCodeAndWriteNFCTag() : null;
                     },
                     color: primary,
                     elevation: 0,
