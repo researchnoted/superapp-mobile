@@ -10,6 +10,7 @@ import 'package:superapp_mobile/presentation/components/input.dart';
 import 'package:superapp_mobile/presentation/pages/auth/login/login_page.dart';
 import 'package:superapp_mobile/presentation/pages/auth/register/bloc/register_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:superapp_mobile/presentation/pages/home/home_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -109,35 +110,8 @@ class _RegisterPageState extends State<RegisterPage> {
                             Input(type: TypeInput.text, label: 'Email', controller: emailController!),
                             Input(type: TypeInput.password, label: 'Password', controller: passwordController!),
                             Button(label: 'Registrasi', onPressed: () {
-                              register(rolePrefs);
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => const HomePage()));
                             }),
-                            // FadeAnimation(
-                            //   1.5,
-                            //   Row(
-                            //     mainAxisAlignment: MainAxisAlignment.center,
-                            //     children: <Widget>[
-                            //       const Text("Have an account?",
-                            //           style: TextStyle(
-                            //             fontFamily: 'Plus Jakarta Sans',
-                            //           )),
-                            //       TextButton(
-                            //         onPressed: () {
-                            //           Navigator.pushReplacement(
-                            //               context,
-                            //               MaterialPageRoute(
-                            //                   builder: (context) => const LoginPage()));
-                            //         },
-                            //         child: Text(
-                            //           "Log In",
-                            //           style: TextStyle(
-                            //             color: kblack,
-                            //             fontFamily: 'Plus Jakarta Sans',
-                            //             fontWeight: FontWeight.w600,
-                            //           ),
-                            //         ),
-                            //       ),
-                            //     ],
-                            //   ))
                           ],
                         )
                       )

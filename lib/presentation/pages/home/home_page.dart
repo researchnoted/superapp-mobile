@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
               height: 70.0,
               child: FloatingActionButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (builder) => rolePrefs == 'Student' ? const SearchPage(hintText: 'Cari penelitian ...', text: 'layanan') : const AddResearchPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (builder) => rolePrefs == 'Student' ? const SearchPage(hintText: 'Cari penelitian ...', text: 'layanan') : AddResearchPage()));
                 },
                 backgroundColor: const Color(0xFF029456),
                 child: const Icon(

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:superapp_mobile/animation/FadeAnimation.dart';
 import 'package:superapp_mobile/constant.dart';
 import 'package:superapp_mobile/presentation/components/button.dart';
 import 'package:superapp_mobile/presentation/components/heading.dart';
 import 'package:superapp_mobile/presentation/components/input.dart';
-import 'package:superapp_mobile/presentation/pages/auth/register/register_page.dart';
 import 'package:superapp_mobile/presentation/pages/home/home_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -71,33 +69,6 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.pushReplacement(
                         context, MaterialPageRoute(builder: (context) => const HomePage()))
                       }),
-                      // FadeAnimation(
-                      //   1.5,
-                      //   Row(
-                      //     mainAxisAlignment: MainAxisAlignment.center,
-                      //     children: <Widget>[
-                      //       const Text("Don't have an account?",
-                      //           style: TextStyle(
-                      //             fontFamily: 'Plus Jakarta Sans',
-                      //           )),
-                      //       TextButton(
-                      //         onPressed: () {
-                      //           Navigator.pushReplacement(
-                      //               context,
-                      //               MaterialPageRoute(
-                      //                   builder: (context) => const RegisterPage()));
-                      //         },
-                      //         child: Text(
-                      //           "Register",
-                      //           style: TextStyle(
-                      //             color: kblack,
-                      //             fontFamily: 'Plus Jakarta Sans',
-                      //             fontWeight: FontWeight.w600,
-                      //           ),
-                      //         ),
-                      //       ),
-                      //     ],
-                      //   ))
                     ],
                   )
                 )
