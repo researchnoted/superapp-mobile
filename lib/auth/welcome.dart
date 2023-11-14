@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:superapp_mobile/auth/login.dart';
-import 'package:superapp_mobile/auth/signup.dart';
-import 'package:superapp_mobile/common/globals.dart';
 import 'package:superapp_mobile/constant.dart';
 import 'package:superapp_mobile/animation/FadeAnimation.dart';
-import 'package:superapp_mobile/home.dart';
 import 'package:superapp_mobile/presentation/components/bottom_sheet_role.dart';
 
 import 'package:flutter/cupertino.dart';
+import 'package:superapp_mobile/presentation/pages/auth/login/login_page.dart';
+import 'package:superapp_mobile/presentation/pages/auth/register/register_page.dart';
+
+import 'package:shared_preferences/shared_preferences.dart';
 
 final buttonTextStyle = TextStyle(
   color: kwhite,
@@ -27,7 +26,7 @@ class Welcome extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return CupertinoActionSheet(
-          title: Text("Select a role",
+          title: const Text("Select a role",
               style: TextStyle(
                   fontFamily: 'Plus Jakarta Sans',
                   fontSize: 12,
@@ -35,16 +34,17 @@ class Welcome extends StatelessWidget {
                   fontWeight: FontWeight.w500)),
           actions: <Widget>[
             CupertinoActionSheetAction(
-              onPressed: () {
-                // Handle action 1
-                regisRole = 'Student';
+              onPressed: () async {
+                final SharedPreferences prefs = await SharedPreferences.getInstance();
+                await prefs.setString('roleSelectedForRegister', 'Student');
+                
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => SignupPage(),
+                    builder: (context) => const RegisterPage(),
                   ),
                 ); // Close the bottom sheet
               },
-              child: Text("Student",
+              child: const Text("Student",
                   style: TextStyle(
                       fontFamily: 'Plus Jakarta Sans',
                       fontSize: 18,
@@ -52,16 +52,17 @@ class Welcome extends StatelessWidget {
                       fontWeight: FontWeight.w500)),
             ),
             CupertinoActionSheetAction(
-              onPressed: () {
-                // Handle action 2
-                regisRole = 'Lecture';
+              onPressed: () async {
+                final SharedPreferences prefs = await SharedPreferences.getInstance();
+                await prefs.setString('roleSelectedForRegister', 'Lecturer');
+
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => SignupPage(),
+                    builder: (context) => const RegisterPage(),
                   ),
                 ); // Close the bottom sheet
               },
-              child: Text("Lecturer",
+              child: const Text("Lecturer",
                   style: TextStyle(
                       fontFamily: 'Plus Jakarta Sans',
                       fontSize: 18,
@@ -74,41 +75,13 @@ class Welcome extends StatelessWidget {
               // Handle cancel
               Navigator.of(context).pop(); // Close the bottom sheet
             },
-            child: Text("Cancel",
+            child: const Text("Cancel",
                 style: TextStyle(
                     fontFamily: 'Plus Jakarta Sans',
                     fontSize: 20,
                     color: Colors.blueAccent,
                     fontWeight: FontWeight.w600)),
           ),
-        );
-      },
-    );
-  }
-
-  void _showSignupOptions(BuildContext context) {
-    showModalBottomSheet<void>(
-      context: context,
-      builder: (BuildContext context) {
-        return RoundedContainerWithButtons(
-          studentButtonPressed: () {
-            // Handle Student signup
-            regisRole = 'Student';
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => SignupPage(),
-              ),
-            );
-          },
-          lecturerButtonPressed: () {
-            // Handle Lecturer signup
-            regisRole = 'Lecture';
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => SignupPage(),
-              ),
-            );
-          },
         );
       },
     );
@@ -121,7 +94,7 @@ class Welcome extends StatelessWidget {
         child: Container(
           width: double.infinity,
           height: MediaQuery.of(context).size.height,
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -130,15 +103,15 @@ class Welcome extends StatelessWidget {
                 children: <Widget>[
                   FadeAnimation(
                       1,
-                      Text(
-                        "Welcome",
+                      const Text(
+                        "Selamat Datang",
                         style: TextStyle(
                             fontFamily: 'Plus Jakarta Sans',
                             fontWeight: FontWeight.bold,
                             fontSize: 40),
                       )),
-                  SizedBox(
-                    height: 20,
+                  const SizedBox(
+                    height: 5,
                   ),
                   FadeAnimation(
                       1.2,
@@ -157,7 +130,7 @@ class Welcome extends StatelessWidget {
                   1.4,
                   Container(
                     height: MediaQuery.of(context).size.height / 3,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage('assets/images/login.png'))),
                   )),
@@ -172,26 +145,26 @@ class Welcome extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LoginPage()));
+                                  builder: (context) => const LoginPage()));
                         },
                         shape: RoundedRectangleBorder(
-                            side: BorderSide(color: Colors.black),
+                            side: const BorderSide(color: Colors.black),
                             borderRadius: BorderRadius.circular(50)),
-                        child: Text(
-                          "Login",
+                        child: const Text(
+                          "Log In",
                           style: TextStyle(
                               fontFamily: 'Plus Jakarta Sans',
                               fontWeight: FontWeight.w600,
                               fontSize: 18),
                         ),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   FadeAnimation(
                       1.6,
                       Container(
-                        padding: EdgeInsets.only(top: 3, left: 3),
+                        padding: const EdgeInsets.only(top: 3, left: 3),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
                         ),
@@ -206,7 +179,7 @@ class Welcome extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50)),
                           child: Text(
-                            "Sign up",
+                            "Registrasi",
                             style: TextStyle(
                                 color: kwhite,
                                 fontFamily: 'Plus Jakarta Sans',

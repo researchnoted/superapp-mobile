@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+Color white = Color(0xFFFFFFFF);
+
 Color primary = Color(0xFF029456);
 Color kblue = Color(0xFF5352C8);
 Color kwhite = Color(0xFFFFFFFF);
@@ -25,3 +27,10 @@ final kBorder = OutlineInputBorder(
   borderRadius: BorderRadius.circular(kBorderRadius),
   borderSide: BorderSide.none,
 );
+
+// Misc Colors - Neutrals
+const Color grey = Color(0xffC4C4C4);
+const Color grey6 = Color(0xffC5C5C5);
+
+// Neutral Colors
+const Color neutralCaption = Color(0xff6D727F);

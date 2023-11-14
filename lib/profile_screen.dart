@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:superapp_mobile/app_styles.dart';
+import 'package:superapp_mobile/constant.dart';
 import 'package:superapp_mobile/size_config.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -11,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
     SizeConfig().init(context);
 
     return Scaffold(
-      backgroundColor: kLighterWhite,
+      backgroundColor: kwhite,
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(
           horizontal: 30,
@@ -77,7 +78,7 @@ class ProfileScreen extends StatelessWidget {
                             child: Text(
                               'Following',
                               style: kPoppinsMedium.copyWith(
-                                color: kWhite,
+                                color: kwhite,
                                 fontSize: SizeConfig.blockSizeHorizontal! * 3,
                               ),
                             ),
@@ -108,7 +109,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
-                    kBorderRadius,
+                    krderRadius,
                   ),
                   color: const Color(0xFF029456),
                 ),
@@ -121,14 +122,14 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             '54.21k',
                             style: kPoppinsBold.copyWith(
-                              color: kWhite,
+                              color: kwhite,
                               fontSize: SizeConfig.blockSizeHorizontal! * 4,
                             ),
                           ),
                           Text(
                             'Followers',
                             style: kPoppinsMedium.copyWith(
-                              color: kWhite,
+                              color: kwhite,
                               fontSize: SizeConfig.blockSizeHorizontal! * 3,
                             ),
                           ),
@@ -149,14 +150,14 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             '2.11k',
                             style: kPoppinsBold.copyWith(
-                              color: kWhite,
+                              color: kwhite,
                               fontSize: SizeConfig.blockSizeHorizontal! * 4,
                             ),
                           ),
                           Text(
                             'Posts',
                             style: kPoppinsMedium.copyWith(
-                              color: kWhite,
+                              color: kwhite,
                               fontSize: SizeConfig.blockSizeHorizontal! * 3,
                             ),
                           ),
@@ -177,14 +178,14 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             '36.40k',
                             style: kPoppinsBold.copyWith(
-                              color: kWhite,
+                              color: kwhite,
                               fontSize: SizeConfig.blockSizeHorizontal! * 4,
                             ),
                           ),
                           Text(
                             'Following',
                             style: kPoppinsMedium.copyWith(
-                              color: kWhite,
+                              color: kwhite,
                               fontSize: SizeConfig.blockSizeHorizontal! * 3,
                             ),
                           ),
@@ -238,7 +239,7 @@ class ProfileScreen extends StatelessWidget {
                             width: 100,
                             padding: const EdgeInsets.all(5),
                             decoration: BoxDecoration(
-                              color: kWhite,
+                              color: kwhite,
                               borderRadius:
                                   BorderRadius.circular(kBorderRadius),
                               boxShadow: [

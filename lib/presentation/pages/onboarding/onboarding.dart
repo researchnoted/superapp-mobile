@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:superapp_mobile/auth/welcome.dart';
 import 'package:superapp_mobile/presentation/pages/onboarding/component/onboarding_contents.dart';
 
@@ -33,8 +32,6 @@ class _OnboardingState extends State<Onboarding> {
   _storeOnboardingInfo() async {
     // to count how many onboard is viewed by the user
     int isViewed = 0;
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setInt('onBoard', isViewed);
   }
 
   @override
@@ -118,7 +115,7 @@ class _OnboardingState extends State<Onboarding> {
                     onboarding_contents[index].title,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: screenHeight * 0.032,
+                      fontSize: screenHeight * 0.042,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Plus Jakarta Sans',
                       color: index % 2 == 0 ? textSecondary : kwhite,
@@ -129,7 +126,7 @@ class _OnboardingState extends State<Onboarding> {
                     onboarding_contents[index].description,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: screenHeight * 0.0182,
+                      fontSize: screenHeight * 0.022,
                       fontFamily: 'Plus Jakarta Sans',
                       fontWeight: FontWeight.normal,
                       color: index % 2 == 0 ? kblack : kwhite,
@@ -162,7 +159,7 @@ class _OnboardingState extends State<Onboarding> {
                           Text(
                             "Next",
                             style: TextStyle(
-                              fontSize: screenHeight * 0.016,
+                              fontSize: screenHeight * 0.020,
                               color: index % 2 == 0 ? kwhite : kblue,
                             ),
                           ),

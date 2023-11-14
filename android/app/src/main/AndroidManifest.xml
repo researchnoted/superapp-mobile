@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.NFC_PREFERRED_PAYMENT_INFO" />
     <uses-permission android:name="android.permission.NFC_TRANSACTION_EVENT" />
     <application
-        android:label="superapp_mobile"
+        android:label="RAN"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
